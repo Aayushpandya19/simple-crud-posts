@@ -6,8 +6,14 @@ This project demonstrates the fundamentals of server-side rendering and CRUD ope
 ---
 
 ## ✨ Features
-- Create new posts 📝  
-- View a list of all posts 📃  
-- Update existing posts ✏️  
-- Delete posts 🗑️  
-- Server-side rendered views using **EJS**  
+
+- Create new posts 📝
+- View a list of all posts 📃
+- Update existing posts ✏️
+- Delete posts 🗑️
+- Server-side rendered views using **EJS**
+
+## 🔗 Deployed Live URL
+
+Check out the live version here:  
+👉 [Live Demo](https://simple-crud-posts.onrender.com/)
