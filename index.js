@@ -47,9 +47,59 @@ let posts = [
 
 
 
-app.get('/',(req,res) => {                                     //   1st
-    res.send("server is working well");
+app.get("/", (req, res) => {
+  res.send(`
+    <html>
+      <head>
+        <title>Server Status</title>
+        <style>
+          body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f4f8; /* light background */
+            font-family: Arial, sans-serif;
+          }
+          .container {
+            text-align: center;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+          }
+          h1 {
+            color: #333;
+          }
+          button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+          }
+          button:hover {
+            background-color: #0056b3;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <h1>✅ Server is working well</h1>
+            <button type="button" onclick="window.location.href='/posts'">
+            Go to Posts
+            </button>
+
+        </div>
+      </body>
+    </html>
+  `);
 });
+
 
 app.get('/posts',(req,res) => {
     res.render("index.ejs",{posts});                            //index
@@ -117,6 +167,6 @@ app.delete('/posts/:id',(req,res)=>{                                //Delete
 
 app.listen(PORT,()=>{
     console.log(`Listening on port ${PORT}`);
-    
+    console.log(`Server URL: http://localhost:${PORT}`);
 })
 
