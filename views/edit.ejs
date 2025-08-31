@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit post</title>
+    <title>Edit Post</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
-    <h2>Edit your Post</h2>
-    <p>Post id:<%= post.id %></p>
-    <p>Post username:@<%= post.username %></p>
-    <form method="post" action="/posts/<%= post.id %>?_method=PATCH" >
-        <textarea name="content"></textarea>
-        <button>Submit</button>
-    </form>
-    
+    <div class="container">
+        <h2><i class="fa-solid fa-pen-to-square"></i> Edit Post</h2>
+        <p><strong>ID:</strong>
+            <%= post.id %>
+        </p>
+        <p><i class="fa-solid fa-user"></i> @<%= post.username %>
+        </p>
+
+        <form method="post" action="/posts/<%= post.id %>?_method=PATCH">
+            <textarea name="content"><%= post.content %></textarea>
+            <button><i class="fa-solid fa-save"></i> Update</button>
+        </form>
+        <br>
+        <a href="/posts"><i class="fa-solid fa-arrow-left"></i> Back to Posts</a>
+    </div>
 </body>
+
 </html>
